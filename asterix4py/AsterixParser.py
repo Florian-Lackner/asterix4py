@@ -45,7 +45,7 @@ class AsterixParser:
 
         while self.p < self.datasize:
             startbyte = self.p
-            cat = int.from_bytes(self.bytes[0:1], byteorder='big', signed=False)
+            cat = int.from_bytes(self.bytes[self.p + 0:self.p + 1], byteorder='big', signed=False)
             length = int.from_bytes(self.bytes[self.p + 1:self.p + 3], byteorder='big', signed=False)
             self.p += 3
 
